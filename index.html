@@ -27,7 +27,6 @@
 html,body{height:100%}
 body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14px;line-height:1.6;min-height:100vh}
 
-/* ── TOP BAR ── */
 .top-bar{background:var(--forest);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(12,59,46,.18)}
 .logo{display:flex;align-items:center;gap:12px}
 .logo-mark{width:36px;height:36px;background:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -41,17 +40,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .spinner-xs{width:12px;height:12px;flex-shrink:0;border:2px solid var(--border2);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* ── LAYOUT ── */
 .split{display:grid;grid-template-columns:500px 1fr;min-height:calc(100vh - 56px)}
 .panel-left{background:var(--surface);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;display:flex;flex-direction:column;gap:1rem}
 .panel-right{background:var(--bg);padding:1.5rem;overflow-y:auto}
 
-/* ── CARDS ── */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);padding:1.25rem}
 .card-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.9rem;display:flex;align-items:center;gap:6px}
 .card-title-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
 
-/* ── SOLVENT TOGGLE ── */
 .solvent-row{display:flex;align-items:center;gap:8px;margin-bottom:.75rem}
 .solvent-label{font-size:11px;font-family:var(--mono);color:var(--muted);white-space:nowrap}
 .solvent-toggle{display:flex;border:1px solid var(--border2);border-radius:var(--r);overflow:hidden}
@@ -60,13 +56,11 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .solvent-btn:first-child{border-right:1px solid var(--border2)}
 .solvent-note{font-size:10px;font-family:var(--mono);color:var(--muted);margin-top:4px;padding:5px 9px;background:var(--gold-light);border:1px solid var(--gold-mid);border-radius:var(--r)}
 
-/* ── REF TABLE DROPDOWN ── */
 .ref-dropdown-row{display:flex;align-items:center;gap:8px;margin-bottom:.75rem}
 .ref-dropdown-label{font-size:10px;font-family:var(--mono);color:var(--muted);white-space:nowrap;text-transform:uppercase;letter-spacing:.06em}
 .ref-select{font-size:11px;font-family:var(--mono);padding:4px 10px;border:1px solid var(--border2);border-radius:var(--r);background:var(--surface2);color:var(--forest);cursor:pointer;outline:none;transition:border-color .15s}
 .ref-select:hover,.ref-select:focus{border-color:var(--accent)}
 
-/* ── DROPZONE ── */
 .dropzone{border:2px dashed var(--sage-mid);border-radius:var(--rlg);padding:2rem 1rem;text-align:center;cursor:pointer;transition:border-color .15s,background .15s;background:var(--surface2);position:relative}
 .dropzone:hover,.dropzone.drag-over{border-color:var(--accent);background:var(--accent-light)}
 .dropzone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
@@ -86,7 +80,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .alert.warn{background:var(--warn-light);border:1px solid var(--tan-mid);color:var(--warn)}
 .alert-icon svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.5}
 
-/* ── REF TABLES ── */
 .ref-table{width:100%;border-collapse:collapse}
 .ref-table th{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:5px 8px;border-bottom:1px solid var(--border);font-family:var(--mono)}
 .ref-table td{padding:5px 8px;border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px}
@@ -94,7 +87,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .ref-table tr:hover td{background:var(--surface2)}
 .ref-sources{font-size:9px;color:var(--muted);margin-top:7px;font-family:var(--mono);line-height:1.7}
 
-/* ── BADGES ── */
 .badge{display:inline-block;font-size:9px;font-family:var(--mono);padding:2px 6px;border-radius:4px;font-weight:600;letter-spacing:.03em}
 .badge-beta{background:rgba(12,59,46,.1);color:var(--forest)}
 .badge-beta-agg{background:rgba(12,59,46,.2);color:#052018}
@@ -105,7 +97,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .badge-310helix{background:var(--blue-light);color:var(--blue)}
 .badge-unassigned{background:var(--red-light);color:var(--red)}
 
-/* ── BUTTONS ── */
 .btn{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-family:var(--mono);padding:6px 13px;border:1px solid var(--border2);border-radius:var(--r);cursor:pointer;background:var(--surface);color:var(--text);transition:background .12s,border-color .12s}
 .btn:hover{background:var(--surface2);border-color:var(--accent)}
 .btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2}
@@ -114,8 +105,9 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .btn.gold{background:var(--gold);color:var(--forest);border-color:var(--gold-mid);font-weight:600}
 .btn.gold:hover{background:var(--gold-mid)}
 .btn.sm{font-size:10px;padding:4px 10px}
+.btn.png{background:var(--purple-light);color:var(--purple);border-color:rgba(74,26,128,.25)}
+.btn.png:hover{background:rgba(74,26,128,.15)}
 
-/* ── EMPTY STATE ── */
 .empty-state{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 2rem;color:var(--muted)}
 .empty-state-icon{width:64px;height:64px;background:var(--surface);border:1px solid var(--border);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
 .empty-state-icon svg{width:32px;height:32px;stroke:var(--sage-mid);fill:none;stroke-width:1.5}
@@ -125,13 +117,11 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .section-label:first-child{margin-top:0}
 .section-label::after{content:'';flex:1;height:1px;background:var(--border)}
 
-/* ── RESULT CARD ── */
 .result-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);padding:1.25rem;margin-bottom:1rem}
 .result-card-title{font-size:14px;font-weight:700;color:var(--forest);margin-bottom:.85rem;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
 .result-card-file{font-size:11px;font-weight:400;color:var(--muted);font-family:var(--mono)}
 .result-card-solvent{font-size:9px;font-family:var(--mono);padding:2px 7px;border-radius:4px;background:var(--forest);color:#fff;font-weight:600}
 
-/* ── AMIDE REGION TABS (top-level per card) ── */
 .amide-tabs{display:flex;border-bottom:2px solid var(--border);margin-bottom:0}
 .amide-tab{font-size:12px;font-family:var(--mono);padding:8px 16px;cursor:pointer;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;background:none;border-left:none;border-right:none;border-top:none;transition:color .12s;display:flex;align-items:center;gap:6px;font-weight:500}
 .amide-tab:hover{color:var(--forest)}
@@ -142,11 +132,9 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .amide-tab-pip.iii{background:var(--purple)}
 .amide-range{font-size:9px;font-family:var(--mono);color:var(--muted);font-weight:400}
 
-/* ── AMIDE SECTION PANELS ── */
 .amide-panel{display:none;padding-top:1rem}
 .amide-panel.active{display:block}
 
-/* ── METRICS per region ── */
 .metrics-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.85rem}
 .metric{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:.7rem .85rem;min-width:90px;flex:1}
 .metric-val{font-size:20px;font-weight:700;letter-spacing:-.03em;line-height:1;margin-bottom:3px}
@@ -158,7 +146,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .m-blue   .metric-val{color:var(--blue)}
 .m-purple .metric-val{color:var(--purple)}
 
-/* ── PIE + LEGEND ── */
 .vis-row{display:flex;align-items:flex-start;gap:1.25rem;margin-bottom:.85rem;flex-wrap:wrap}
 .pie-canvas-wrap{flex-shrink:0;width:130px;height:130px}
 .pie-legend{flex:1;min-width:120px;padding-top:4px}
@@ -167,7 +154,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .pie-legend-name{font-size:10px;font-family:var(--mono);color:var(--muted);flex:1}
 .pie-legend-pct{font-size:10px;font-family:var(--mono);font-weight:600;color:var(--forest)}
 
-/* ── β-Sheet breakdown ── */
 .beta-breakdown{background:rgba(12,59,46,.04);border:1px solid rgba(12,59,46,.12);border-radius:var(--r);padding:9px 12px;margin-bottom:.85rem}
 .beta-breakdown-title{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--forest);margin-bottom:8px;font-family:var(--mono)}
 .beta-breakdown-rows{display:flex;gap:7px;flex-wrap:wrap}
@@ -175,7 +161,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .beta-sub-val{font-size:20px;font-weight:700;color:var(--forest);line-height:1}
 .beta-sub-lbl{font-size:9px;font-family:var(--mono);color:var(--muted);margin-top:3px;text-align:center}
 
-/* ── Sub-tabs (Group Summary / Peak Detail) ── */
 .sub-tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:.75rem;margin-top:.25rem}
 .sub-tab{font-size:10px;font-family:var(--mono);padding:5px 12px;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;background:none;border-left:none;border-right:none;border-top:none;transition:color .12s}
 .sub-tab:hover{color:var(--forest)}
@@ -183,7 +168,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .sub-panel{display:none}
 .sub-panel.active{display:block}
 
-/* ── Tables ── */
 .table-wrap{overflow-x:auto}
 table{width:100%;border-collapse:collapse}
 thead th{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:6px 9px;border-bottom:1px solid var(--border);font-family:var(--mono)}
@@ -191,21 +175,22 @@ tbody td{padding:7px 9px;border-bottom:1px solid var(--border);font-family:var(-
 tbody tr:last-child td{border-bottom:none}
 tbody tr:hover td{background:var(--surface2)}
 
-/* ── Ratio chip ── */
 .ratio-chip{display:inline-flex;align-items:center;gap:6px;background:var(--gold-light);border:1px solid var(--gold-mid);border-radius:var(--r);padding:5px 10px;font-family:var(--mono);font-size:11px;margin-bottom:6px;color:var(--forest)}
 .ratio-chip strong{font-weight:700}
 
-/* ── No data ── */
 .no-data{padding:14px;text-align:center;font-size:11px;font-family:var(--mono);color:var(--muted);background:var(--surface2);border-radius:var(--r)}
-
-/* ── Divider ── */
 .region-divider{height:1px;background:var(--border);margin:.75rem 0}
-
-.dl-row{display:flex;gap:7px;margin-top:.75rem;flex-wrap:wrap}
+.dl-row{display:flex;gap:7px;margin-top:.75rem;flex-wrap:wrap;align-items:center}
 .area-note{font-size:10px;font-family:var(--mono);color:var(--muted);margin-top:5px}
 .pm-footnote{font-size:10px;font-family:var(--mono);color:var(--muted);margin-top:6px;padding:5px 9px;background:var(--gold-light);border:1px solid var(--gold-mid);border-radius:var(--r);line-height:1.8}
 
-/* ── Signature ── */
+/* ── PNG export toast ── */
+.png-toast{position:fixed;bottom:24px;right:24px;background:var(--forest);color:#fff;font-size:11px;font-family:var(--mono);padding:10px 16px;border-radius:var(--r);box-shadow:0 4px 20px rgba(12,59,46,.3);z-index:9999;opacity:0;transform:translateY(8px);transition:opacity .2s,transform .2s;pointer-events:none}
+.png-toast.show{opacity:1;transform:translateY(0)}
+
+/* ── PNG capture target styling ── */
+.png-capture-wrap{background:var(--surface);border-radius:var(--rlg)}
+
 .signature{margin-top:2rem;padding:1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);text-align:right}
 .sig-rule{display:inline-block;width:80px;height:2px;background:linear-gradient(90deg,transparent,var(--gold));margin-bottom:8px}
 .sig-name{font-family:'Georgia',serif;font-size:16px;font-style:italic;color:var(--forest);letter-spacing:.01em;margin-bottom:3px}
@@ -244,10 +229,8 @@ tbody tr:hover td{background:var(--surface2)}
 </div>
 
 <div class="split">
-<!-- ══════════════ LEFT PANEL ══════════════ -->
 <div class="panel-left">
 
-  <!-- Downloads -->
   <div class="card">
     <div class="card-title"><span class="card-title-dot"></span>Downloads</div>
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:9px 12px;background:var(--gold-light);border:1px solid var(--gold-mid);border-radius:var(--r)">
@@ -259,7 +242,6 @@ tbody tr:hover td{background:var(--surface2)}
     </div>
   </div>
 
-  <!-- Settings + Upload -->
   <div class="card">
     <div class="card-title"><span class="card-title-dot"></span>Analysis settings</div>
     <div class="solvent-row">
@@ -290,7 +272,6 @@ tbody tr:hover td{background:var(--surface2)}
     </div>
   </div>
 
-  <!-- Amide I reference — with H2O / D2O dropdown -->
   <div class="card">
     <div class="card-title"><span class="card-title-dot"></span>Amide I peak assignment</div>
     <div class="ref-dropdown-row">
@@ -303,7 +284,6 @@ tbody tr:hover td{background:var(--surface2)}
     <div id="ref-table-container"></div>
   </div>
 
-  <!-- Amide II & III reference -->
   <div class="card">
     <div class="card-title"><span class="card-title-dot"></span>Amide II &amp; III reference</div>
     <table class="ref-table">
@@ -326,9 +306,8 @@ tbody tr:hover td{background:var(--surface2)}
     <div class="sig-email"><a href="mailto:sanaabzakh262@gmail.com">sanaabzakh262@gmail.com</a></div>
   </div>
 
-</div><!-- /panel-left -->
+</div>
 
-<!-- ══════════════ RIGHT PANEL ══════════════ -->
 <div class="panel-right" id="panel-right">
   <div id="empty-state" class="empty-state">
     <div class="empty-state-icon"><svg viewBox="0 0 24 24"><path d="M2 20h20M6 20V10M12 20V4M18 20v-6"/></svg></div>
@@ -339,23 +318,23 @@ tbody tr:hover td{background:var(--surface2)}
   <div id="comparison-area"></div>
 </div>
 
-</div><!-- /split -->
+</div>
 
-<!-- ════════════ PYTHON ════════════ -->
+<!-- Toast notification -->
+<div class="png-toast" id="png-toast">📷 PNG saved!</div>
+
 <script id="py-src" type="text/x-python">
 import re, json
 from pathlib import Path
 
-# H2O Amide I — ranges per reference table
 ASSIGNMENT_H2O = [
     ("Aggregated β-Sheet",    1600.0, 1627.9, "β-Sheet",    "aggregated"),
     ("β-Sheet (Main)",        1628.0, 1642.9, "β-Sheet",    "main"),
     ("Random Coil",           1643.0, 1649.4, "Random Coil", ""),
     ("α-Helix",               1649.5, 1659.9, "α-Helix",    ""),
     ("β-Turns & Loops",       1660.0, 1689.9, "β-Turns",    ""),
-    ("Anti-parallel β-Sheet", 1690.0, 1700, "β-Sheet",    "antiparallel"),
+    ("Anti-parallel β-Sheet", 1690.0, 1700,   "β-Sheet",    "antiparallel"),
 ]
-# D2O — placeholder; will be updated when D2O table is provided
 ASSIGNMENT_D2O = [
     ("Aggregated β-Sheet",    1600.0, 1625.9, "β-Sheet",    "aggregated"),
     ("β-Sheet (Main)",        1630.0, 1642.9, "β-Sheet",    "main"),
@@ -364,7 +343,6 @@ ASSIGNMENT_D2O = [
     ("β-Turns & Loops",       1660.0, 1679.9, "β-Turns",    ""),
     ("Anti-parallel β-Sheet", 1680.0, 1695.0, "β-Sheet",    "antiparallel"),
 ]
-# Amide II — range 1510–1580 per PDF
 ASSIGNMENT_AMIDE2 = [
     ("α-Helix (II)",   1540.0, 1550.0, "α-Helix"),
     ("β-Sheet (II)",   1525.0, 1535.0, "β-Sheet"),
@@ -479,8 +457,8 @@ def analyze_for_web(content, filename, solvent):
     all_peaks=parse_all(content)
     if not all_peaks: return json.dumps({"error":"No peaks parsed."})
     a1t=ASSIGNMENT_H2O if solvent=="H2O" else ASSIGNMENT_D2O
-    a1p=region(all_peaks,1599,1700)   # only peaks >= 1599 cm-1
-    a2p=region(all_peaks,1510,1580)   # Amide II: 1510–1580
+    a1p=region(all_peaks,1599,1700)
+    a2p=region(all_peaks,1510,1580)
     a3p=region(all_peaks,1210,1360)
     a1d,a1gs,a1tot,a1bs=calc(a1p,a1t) if a1p else ([],{},0,{})
     a2d,a2gs,a2tot,_=calc(a2p,ASSIGNMENT_AMIDE2) if a2p else ([],{},0,{})
@@ -496,8 +474,8 @@ def analyze_for_web(content, filename, solvent):
     })
 </script>
 
-<!-- ════════════ JS ════════════ -->
 <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script>
 'use strict';
 let pyodide=null, allResults=[], currentSolvent='H2O';
@@ -512,8 +490,6 @@ const GC = {
 };
 const MC = {'β-Sheet':'m-forest','α-Helix':'m-sage','Random Coil':'m-tan','β-Turns':'m-gold'};
 
-/* ── Reference tables data ── */
-// Each row: [range, assignment, group, badge, tolerance, mean_frequencies_string]
 const REF = {
   H2O:[
     ['1600–1627.9', 'Aggregated β-Sheet',   'β-Sheet',    'badge-beta-agg',  '±2', '1624±1.0, 1627±2.0'],
@@ -542,10 +518,7 @@ function renderRefTable(solvent) {
   document.getElementById('ref-table-container').innerHTML = `
     <table class="ref-table">
       <thead><tr>
-        <th>Range (cm⁻¹)</th>
-        <th>Assignment</th>
-        <th>Group</th>
-        <th>± (cm⁻¹)</th>
+        <th>Range (cm⁻¹)</th><th>Assignment</th><th>Group</th><th>± (cm⁻¹)</th>
       </tr></thead>
       <tbody>${rows.map(r=>`<tr>
         <td><strong>${esc(r[0])}</strong></td>
@@ -561,7 +534,6 @@ function setSolvent(s) {
   document.getElementById('btn-h2o').classList.toggle('active', s==='H2O');
   document.getElementById('btn-d2o').classList.toggle('active', s==='D2O');
   document.getElementById('solvent-note').textContent = SOLVENT_NOTES[s];
-  // sync dropdown in ref card
   document.getElementById('ref-table-select').value = s;
   renderRefTable(s);
 }
@@ -626,6 +598,66 @@ function addChip(r) {
   document.getElementById('file-chips').appendChild(c);
 }
 
+/* ── PNG Export ── */
+function showToast(msg) {
+  const t = document.getElementById('png-toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2500);
+}
+
+async function exportPNG(elementId, filename) {
+  const el = document.getElementById(elementId);
+  if (!el) { showToast('⚠ Element not found'); return; }
+  
+  // Temporarily show the element if hidden (in inactive amide panel)
+  const panel = el.closest('.amide-panel');
+  let wasHidden = false;
+  if (panel && !panel.classList.contains('active')) {
+    wasHidden = true;
+    panel.style.display = 'block';
+    panel.style.position = 'absolute';
+    panel.style.left = '-9999px';
+  }
+
+  try {
+    showToast('⏳ Capturing…');
+    const canvas = await html2canvas(el, {
+      backgroundColor: '#ffffff',
+      scale: 2,
+      useCORS: true,
+      logging: false,
+      onclone: (cloned) => {
+        // Redraw canvases in clone since html2canvas can't capture them
+        const origCanvases = el.querySelectorAll('canvas');
+        const clonedCanvases = cloned.querySelectorAll('canvas');
+        origCanvases.forEach((orig, i) => {
+          if (clonedCanvases[i]) {
+            clonedCanvases[i].width = orig.width;
+            clonedCanvases[i].height = orig.height;
+            const ctx = clonedCanvases[i].getContext('2d');
+            ctx.drawImage(orig, 0, 0);
+          }
+        });
+      }
+    });
+    const link = document.createElement('a');
+    link.download = filename;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    showToast('✓ PNG saved!');
+  } catch(err) {
+    showToast('⚠ Export failed');
+    console.error(err);
+  }
+
+  if (wasHidden) {
+    panel.style.display = '';
+    panel.style.position = '';
+    panel.style.left = '';
+  }
+}
+
 /* ── Pie drawing ── */
 function drawPie(canvasId, gs, order) {
   const canvas=document.getElementById(canvasId); if(!canvas) return;
@@ -655,8 +687,6 @@ function buildAmidePanel(amideData, pidSuffix, showBeta, ratio) {
   }
 
   const cid = `pie${pidSuffix}`;
-
-  /* Metrics */
   const mgroups = go.filter(g=>g!=='Unassigned'&&g!=='Unassigned II');
   const metricsHtml = mgroups.filter(g=>g in gs).map(g=>`
     <div class="metric ${MC[g]||''}">
@@ -664,7 +694,6 @@ function buildAmidePanel(amideData, pidSuffix, showBeta, ratio) {
       <div class="metric-lbl">${esc(g)}</div>
     </div>`).join('');
 
-  /* Legend */
   const legendHtml = go.filter(g=>g in gs&&gs[g]>0).map(g=>`
     <div class="pie-legend-row">
       <div class="pie-swatch" style="background:${(GC[g]||{pie:'#aaa'}).pie}"></div>
@@ -672,7 +701,6 @@ function buildAmidePanel(amideData, pidSuffix, showBeta, ratio) {
       <span class="pie-legend-pct">${gs[g].toFixed(2)}%</span>
     </div>`).join('');
 
-  /* β-Sheet breakdown (only for Amide I) */
   const betaHtml = showBeta ? `
     <div class="beta-breakdown">
       <div class="beta-breakdown-title">β-Sheet Breakdown — Total ${(gs['β-Sheet']||0).toFixed(2)}%</div>
@@ -694,13 +722,11 @@ function buildAmidePanel(amideData, pidSuffix, showBeta, ratio) {
 
   const ratioHtml = (ratio!=null && showBeta) ? `<div class="ratio-chip">α/β ratio: <strong>${ratio.toFixed(3)}</strong>&nbsp;&nbsp;α ${(gs['α-Helix']||0).toFixed(2)}% / β ${(gs['β-Sheet']||0).toFixed(2)}%</div>` : '';
 
-  /* Group summary rows */
   const sumRows = go.filter(g=>g in gs).map(g=>`<tr>
     <td><span class="badge ${(GC[g]||{badge:'badge-unassigned'}).badge}">${esc(g)}</span></td>
     <td>${gs[g].toFixed(2)}%</td>
   </tr>`).join('');
 
-  /* Peak detail rows */
   const pkRows = details.map(d=>`<tr>
     <td>${d.peak}</td>
     <td>${d.center.toFixed(2)}</td>
@@ -740,6 +766,9 @@ function buildAmidePanel(amideData, pidSuffix, showBeta, ratio) {
     </div>`;
 }
 
+/* ── PNG export icon SVG ── */
+const pngIcon = `<svg viewBox="0 0 24 24" style="width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>`;
+
 /* ── Render full result card ── */
 let cardIndex = 0;
 function renderResult(r) {
@@ -758,9 +787,11 @@ function renderResult(r) {
   const a1id=`a1-${sid}`, a2id=`a2-${sid}`, a3id=`a3-${sid}`;
   const a2empty = (!r.amide2.details||r.amide2.details.length===0);
   const a3empty = (!r.amide3.details||r.amide3.details.length===0);
-
   const a2pip = a2empty ? ' style="opacity:.4"' : '';
   const a3pip = a3empty ? ' style="opacity:.4"' : '';
+
+  // PNG capture wrapper IDs per amide region
+  const cap1=`cap-a1-${sid}`, cap2=`cap-a2-${sid}`, cap3=`cap-a3-${sid}`;
 
   card.innerHTML = `
     <div class="result-card-title">
@@ -784,29 +815,48 @@ function renderResult(r) {
     </div>
 
     <div id="${a1id}" class="amide-panel active">
-      ${buildAmidePanel(r.amide1, `_a1_${sid}`, true, r.ratio)}
-    </div>
-    <div id="${a2id}" class="amide-panel">
-      ${a2empty
-        ? `<div class="no-data">No Amide II peaks detected (1480–1575 cm⁻¹) in this file.</div>`
-        : buildAmidePanel(r.amide2, `_a2_${sid}`, false, null)}
-    </div>
-    <div id="${a3id}" class="amide-panel">
-      ${a3empty
-        ? '<div class="no-data">No Amide III peaks detected (1220–1340 cm⁻¹) in this file.</div>'
-        : buildAmidePanel(r.amide3, `_a3_${sid}`, false, null)}
+      <div id="${cap1}" class="png-capture-wrap" style="padding:12px 4px 4px">
+        ${buildAmidePanel(r.amide1, `_a1_${sid}`, true, r.ratio)}
+      </div>
+      <div class="dl-row" style="margin-top:.75rem">
+        <button class="btn" onclick="downloadTXT('${sid}')">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          TXT
+        </button>
+        <button class="btn png" onclick="exportPNG('${cap1}','${r.sample_name}_amide-I.png')">
+          ${pngIcon} PNG · Amide I
+        </button>
+      </div>
     </div>
 
-    <div class="dl-row">
-      <button class="btn" onclick="downloadTXT('${sid}')">
-        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download TXT
-      </button>
+    <div id="${a2id}" class="amide-panel">
+      <div id="${cap2}" class="png-capture-wrap" style="padding:12px 4px 4px">
+        ${a2empty
+          ? `<div class="no-data">No Amide II peaks detected (1480–1575 cm⁻¹) in this file.</div>`
+          : buildAmidePanel(r.amide2, `_a2_${sid}`, false, null)}
+      </div>
+      ${!a2empty ? `<div class="dl-row" style="margin-top:.75rem">
+        <button class="btn png" onclick="exportPNG('${cap2}','${r.sample_name}_amide-II.png')">
+          ${pngIcon} PNG · Amide II
+        </button>
+      </div>` : ''}
+    </div>
+
+    <div id="${a3id}" class="amide-panel">
+      <div id="${cap3}" class="png-capture-wrap" style="padding:12px 4px 4px">
+        ${a3empty
+          ? '<div class="no-data">No Amide III peaks detected (1220–1340 cm⁻¹) in this file.</div>'
+          : buildAmidePanel(r.amide3, `_a3_${sid}`, false, null)}
+      </div>
+      ${!a3empty ? `<div class="dl-row" style="margin-top:.75rem">
+        <button class="btn png" onclick="exportPNG('${cap3}','${r.sample_name}_amide-III.png')">
+          ${pngIcon} PNG · Amide III
+        </button>
+      </div>` : ''}
     </div>`;
 
   area.appendChild(card);
 
-  /* draw pies after DOM is ready */
   requestAnimationFrame(()=>{
     drawPie(`pie_a1_${sid}`, r.amide1.group_summary, r.amide1.group_order||[]);
     if (!a2empty) drawPie(`pie_a2_${sid}`, r.amide2.group_summary, r.amide2.group_order||[]);
@@ -820,7 +870,6 @@ function switchAmide(btn, id) {
   card.querySelectorAll('.amide-panel').forEach(p=>p.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById(id).classList.add('active');
-  /* redraw pie in newly-shown panel */
   const panel = document.getElementById(id);
   const cv = panel.querySelector('canvas');
   if (cv) {
@@ -846,7 +895,7 @@ function updateComparison() {
   area.innerHTML='';
   const lbl=document.createElement('div'); lbl.className='section-label'; lbl.textContent='Multi-sample comparison (Amide I)';
   area.appendChild(lbl);
-  const card=document.createElement('div'); card.className='result-card';
+  const card=document.createElement('div'); card.className='result-card'; card.id='comparison-card';
   const groups=['β-Sheet','α-Helix','Random Coil','β-Turns'];
   const rows=allResults.map(r=>{
     const gs=r.amide1.group_summary, bs=r.amide1.beta_sub||{};
@@ -860,22 +909,28 @@ function updateComparison() {
       <td>${r.ratio!=null?r.ratio.toFixed(3):'N/A'}</td>
     </tr>`;
   }).join('');
+
   card.innerHTML=`
     <div class="result-card-title">Comparison — ${allResults.length} samples</div>
-    <div class="table-wrap"><table>
-      <thead><tr><th>Sample</th><th>Solvent</th>${groups.map(g=>`<th>${esc(g)}</th>`).join('')}<th>Agg.β%</th><th>Para.β%</th><th>Anti.β%</th><th>α/β</th></tr></thead>
-      <tbody>${rows}</tbody>
-    </table></div>
+    <div id="comparison-table-capture" class="png-capture-wrap" style="padding:8px 4px 4px">
+      <div class="table-wrap"><table>
+        <thead><tr><th>Sample</th><th>Solvent</th>${groups.map(g=>`<th>${esc(g)}</th>`).join('')}<th>Agg.β%</th><th>Para.β%</th><th>Anti.β%</th><th>α/β</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table></div>
+    </div>
     <div class="dl-row">
       <button class="btn primary" onclick="downloadComparisonTXT()">
         <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download comparison TXT
+        TXT
+      </button>
+      <button class="btn png" onclick="exportPNG('comparison-table-capture','comparison_table.png')">
+        ${pngIcon} PNG · Comparison table
       </button>
     </div>`;
   area.appendChild(card);
 }
 
-/* ── Downloads ── */
+/* ── Text Downloads ── */
 function downloadTXT(sid) {
   const card=document.getElementById(`result-${sid}`);
   const r=card.__result;
@@ -918,7 +973,6 @@ function triggerDL(content, filename, mime) {
   a.click(); URL.revokeObjectURL(a.href);
 }
 
-/* ── Example CSV ── */
 const EXAMPLE_CSV=`Peak  Type,a0,a1
 1  Gauss Area,1.59058735,1487.10655
 2  Gauss Area,1.92563363,1510.16619

@@ -48,6 +48,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .card-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.9rem;display:flex;align-items:center;gap:6px}
 .card-title-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
 
+/* ── Solvent toggle ── */
 .solvent-row{display:flex;align-items:center;gap:8px;margin-bottom:.75rem}
 .solvent-label{font-size:11px;font-family:var(--mono);color:var(--muted);white-space:nowrap}
 .solvent-toggle{display:flex;border:1px solid var(--border2);border-radius:var(--r);overflow:hidden}
@@ -55,6 +56,15 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .solvent-btn.active{background:var(--forest);color:#fff;font-weight:600}
 .solvent-btn:first-child{border-right:1px solid var(--border2)}
 .solvent-note{font-size:10px;font-family:var(--mono);color:var(--muted);margin-top:4px;padding:5px 9px;background:var(--gold-light);border:1px solid var(--gold-mid);border-radius:var(--r)}
+
+/* ── Protein type toggle ── */
+.protein-row{display:flex;align-items:flex-start;gap:8px;margin-bottom:.75rem;flex-wrap:wrap}
+.protein-toggle{display:flex;border:1px solid var(--border2);border-radius:var(--r);overflow:hidden;flex-wrap:wrap}
+.protein-btn{font-size:11px;font-family:var(--mono);padding:5px 12px;cursor:pointer;background:var(--surface2);color:var(--muted);border:none;transition:all .15s;white-space:nowrap}
+.protein-btn.active{background:var(--blue);color:#fff;font-weight:600}
+.protein-btn:first-child{border-right:1px solid var(--border2)}
+.protein-note{font-size:10px;font-family:var(--mono);color:var(--muted);margin-top:4px;padding:5px 9px;background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:var(--r);line-height:1.7}
+.protein-note strong{color:var(--blue);font-weight:600}
 
 .ref-dropdown-row{display:flex;align-items:center;gap:8px;margin-bottom:.75rem}
 .ref-dropdown-label{font-size:10px;font-family:var(--mono);color:var(--muted);white-space:nowrap;text-transform:uppercase;letter-spacing:.06em}
@@ -87,6 +97,10 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .ref-table tr:hover td{background:var(--surface2)}
 .ref-sources{font-size:9px;color:var(--muted);margin-top:7px;font-family:var(--mono);line-height:1.7}
 
+/* ── 310-helix highlight row ── */
+.row-310{background:rgba(26,80,128,.05) !important}
+.row-310 td{color:var(--blue) !important}
+
 .badge{display:inline-block;font-size:9px;font-family:var(--mono);padding:2px 6px;border-radius:4px;font-weight:600;letter-spacing:.03em}
 .badge-beta{background:rgba(12,59,46,.1);color:var(--forest)}
 .badge-beta-agg{background:rgba(12,59,46,.2);color:#052018}
@@ -107,6 +121,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .btn.sm{font-size:10px;padding:4px 10px}
 .btn.png{background:var(--purple-light);color:var(--purple);border-color:rgba(74,26,128,.25)}
 .btn.png:hover{background:rgba(74,26,128,.15)}
+.btn.doc{background:var(--blue-light);color:var(--blue);border-color:var(--blue-mid);font-weight:600}
+.btn.doc:hover{background:rgba(26,80,128,.15)}
 
 .empty-state{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 2rem;color:var(--muted)}
 .empty-state-icon{width:64px;height:64px;background:var(--surface);border:1px solid var(--border);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
@@ -121,6 +137,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .result-card-title{font-size:14px;font-weight:700;color:var(--forest);margin-bottom:.85rem;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
 .result-card-file{font-size:11px;font-weight:400;color:var(--muted);font-family:var(--mono)}
 .result-card-solvent{font-size:9px;font-family:var(--mono);padding:2px 7px;border-radius:4px;background:var(--forest);color:#fff;font-weight:600}
+.result-card-protein{font-size:9px;font-family:var(--mono);padding:2px 7px;border-radius:4px;background:var(--blue);color:#fff;font-weight:600}
 
 .amide-tabs{display:flex;border-bottom:2px solid var(--border);margin-bottom:0}
 .amide-tab{font-size:12px;font-family:var(--mono);padding:8px 16px;cursor:pointer;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;background:none;border-left:none;border-right:none;border-top:none;transition:color .12s;display:flex;align-items:center;gap:6px;font-weight:500}
@@ -184,11 +201,8 @@ tbody tr:hover td{background:var(--surface2)}
 .area-note{font-size:10px;font-family:var(--mono);color:var(--muted);margin-top:5px}
 .pm-footnote{font-size:10px;font-family:var(--mono);color:var(--muted);margin-top:6px;padding:5px 9px;background:var(--gold-light);border:1px solid var(--gold-mid);border-radius:var(--r);line-height:1.8}
 
-/* ── PNG export toast ── */
 .png-toast{position:fixed;bottom:24px;right:24px;background:var(--forest);color:#fff;font-size:11px;font-family:var(--mono);padding:10px 16px;border-radius:var(--r);box-shadow:0 4px 20px rgba(12,59,46,.3);z-index:9999;opacity:0;transform:translateY(8px);transition:opacity .2s,transform .2s;pointer-events:none}
 .png-toast.show{opacity:1;transform:translateY(0)}
-
-/* ── PNG capture target styling ── */
 .png-capture-wrap{background:var(--surface);border-radius:var(--rlg)}
 
 .signature{margin-top:2rem;padding:1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);text-align:right}
@@ -231,19 +245,34 @@ tbody tr:hover td{background:var(--surface2)}
 <div class="split">
 <div class="panel-left">
 
+  <!-- Downloads card -->
   <div class="card">
     <div class="card-title"><span class="card-title-dot"></span>Downloads</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:9px 12px;background:var(--gold-light);border:1px solid var(--gold-mid);border-radius:var(--r)">
-      <p style="font-size:11px;font-family:var(--mono);color:var(--forest-mid);flex:1"><strong>Example file</strong><br/>PeakFit CSV: Peak Type, a0, a1</p>
-      <button class="btn gold sm" onclick="downloadExampleCSV()">
-        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download
-      </button>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <!-- Example CSV -->
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:9px 12px;background:var(--gold-light);border:1px solid var(--gold-mid);border-radius:var(--r)">
+        <p style="font-size:11px;font-family:var(--mono);color:var(--forest-mid);flex:1"><strong>Example file</strong><br/>PeakFit CSV: Peak Type, a0, a1</p>
+        <button class="btn gold sm" onclick="downloadExampleCSV()">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download
+        </button>
+      </div>
+      <!-- Documentation PDF -->
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:9px 12px;background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:var(--r)">
+        <p style="font-size:11px;font-family:var(--mono);color:var(--blue);flex:1"><strong>Documentation</strong><br/>Usage guide &amp; assignment reference</p>
+        <button class="btn doc sm" onclick="downloadDocumentation()">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          PDF
+        </button>
+      </div>
     </div>
   </div>
 
+  <!-- Analysis settings card -->
   <div class="card">
     <div class="card-title"><span class="card-title-dot"></span>Analysis settings</div>
+
+    <!-- Solvent toggle -->
     <div class="solvent-row">
       <span class="solvent-label">Solvent:</span>
       <div class="solvent-toggle">
@@ -255,6 +284,21 @@ tbody tr:hover td{background:var(--surface2)}
       H₂O: Amide I (1600–1700), Amide II (1510–1580), Amide III (1220–1340)
     </div>
 
+    <!-- Protein type toggle -->
+    <div class="protein-row" style="margin-top:.85rem">
+      <span class="solvent-label" style="padding-top:5px">Protein type:</span>
+      <div style="flex:1">
+        <div class="protein-toggle">
+          <button class="protein-btn active" id="btn-globular" onclick="setProteinType('globular')">Globular</button>
+          <button class="protein-btn"        id="btn-310"      onclick="setProteinType('310helix')">3₁₀-Helix rich</button>
+        </div>
+        <div class="protein-note" id="protein-note">
+          <strong>Globular</strong> — β-turns assigned at 1660–1666 cm⁻¹ (default for albumin, IgG, enzymes)
+        </div>
+      </div>
+    </div>
+
+    <!-- File upload -->
     <div style="margin-top:.85rem">
       <div class="card-title" style="margin-bottom:.55rem"><span class="card-title-dot"></span>Upload PeakFit files</div>
       <div class="dropzone" id="dropzone">
@@ -272,6 +316,7 @@ tbody tr:hover td{background:var(--surface2)}
     </div>
   </div>
 
+  <!-- Amide I assignment reference -->
   <div class="card">
     <div class="card-title"><span class="card-title-dot"></span>Amide I peak assignment</div>
     <div class="ref-dropdown-row">
@@ -284,6 +329,7 @@ tbody tr:hover td{background:var(--surface2)}
     <div id="ref-table-container"></div>
   </div>
 
+  <!-- Amide II & III reference -->
   <div class="card">
     <div class="card-title"><span class="card-title-dot"></span>Amide II &amp; III reference</div>
     <table class="ref-table">
@@ -306,36 +352,52 @@ tbody tr:hover td{background:var(--surface2)}
     <div class="sig-email"><a href="mailto:sanaabzakh262@gmail.com">sanaabzakh262@gmail.com</a></div>
   </div>
 
-</div>
+</div><!-- end panel-left -->
 
 <div class="panel-right" id="panel-right">
   <div id="empty-state" class="empty-state">
     <div class="empty-state-icon"><svg viewBox="0 0 24 24"><path d="M2 20h20M6 20V10M12 20V4M18 20v-6"/></svg></div>
     <h3>No results yet</h3>
-    <p>Choose a solvent, upload PeakFit files.<br/>Each result shows Amide I, II, and III tabs<br/>with their own charts and percentages.</p>
+    <p>Choose a solvent &amp; protein type, upload PeakFit files.<br/>Each result shows Amide I, II, and III tabs<br/>with their own charts and percentages.</p>
   </div>
   <div id="results-area"></div>
   <div id="comparison-area"></div>
 </div>
-
 </div>
 
-<!-- Toast notification -->
 <div class="png-toast" id="png-toast">📷 PNG saved!</div>
 
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  Python engine                                                 -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
 <script id="py-src" type="text/x-python">
 import re, json
 from pathlib import Path
 
-ASSIGNMENT_H2O = [
+# ── H₂O · Globular (default) ─────────────────────────────────────
+ASSIGNMENT_H2O_GLOBULAR = [
     ("Aggregated β-Sheet",    1600.0, 1627.9, "β-Sheet",    "aggregated"),
     ("β-Sheet (Main)",        1628.0, 1642.9, "β-Sheet",    "main"),
     ("Random Coil",           1643.0, 1649.4, "Random Coil", ""),
     ("α-Helix",               1649.5, 1659.9, "α-Helix",    ""),
     ("β-Turns & Loops",       1660.0, 1689.9, "β-Turns",    ""),
-    ("Anti-parallel β-Sheet", 1690.0, 1700,   "β-Sheet",    "antiparallel"),
+    ("Anti-parallel β-Sheet", 1690.0, 1700.0, "β-Sheet",    "antiparallel"),
 ]
-ASSIGNMENT_D2O = [
+
+# ── H₂O · 3₁₀-Helix rich ─────────────────────────────────────────
+# 1660–1666 carved out for 3₁₀-Helix; remainder stays β-Turns
+ASSIGNMENT_H2O_310 = [
+    ("Aggregated β-Sheet",    1600.0, 1627.9, "β-Sheet",    "aggregated"),
+    ("β-Sheet (Main)",        1628.0, 1642.9, "β-Sheet",    "main"),
+    ("Random Coil",           1643.0, 1649.4, "Random Coil", ""),
+    ("α-Helix",               1649.5, 1659.9, "α-Helix",    ""),
+    ("3₁₀-Helix",             1660.0, 1666.0, "3₁₀-Helix",  ""),   # ← new sub-range
+    ("β-Turns & Loops",       1666.1, 1689.9, "β-Turns",    ""),
+    ("Anti-parallel β-Sheet", 1690.0, 1700.0, "β-Sheet",    "antiparallel"),
+]
+
+# ── D₂O · Globular (default) ─────────────────────────────────────
+ASSIGNMENT_D2O_GLOBULAR = [
     ("Aggregated β-Sheet",    1600.0, 1625.9, "β-Sheet",    "aggregated"),
     ("β-Sheet (Main)",        1630.0, 1642.9, "β-Sheet",    "main"),
     ("Random Coil",           1643.0, 1649.4, "Random Coil", ""),
@@ -343,6 +405,20 @@ ASSIGNMENT_D2O = [
     ("β-Turns & Loops",       1660.0, 1679.9, "β-Turns",    ""),
     ("Anti-parallel β-Sheet", 1680.0, 1695.0, "β-Sheet",    "antiparallel"),
 ]
+
+# ── D₂O · 3₁₀-Helix rich ─────────────────────────────────────────
+# Isotopic shift: 3₁₀-Helix moves to 1639–1643 cm⁻¹ in D₂O
+# This overlaps β-Sheet (Main) / Random Coil region, so we carve it out
+ASSIGNMENT_D2O_310 = [
+    ("Aggregated β-Sheet",    1600.0, 1625.9, "β-Sheet",    "aggregated"),
+    ("β-Sheet (Main)",        1626.0, 1638.9, "β-Sheet",    "main"),
+    ("3₁₀-Helix",             1639.0, 1643.0, "3₁₀-Helix",  ""),   # ← D₂O isotopic shift
+    ("Random Coil",           1643.1, 1649.4, "Random Coil", ""),
+    ("α-Helix",               1649.5, 1659.9, "α-Helix",    ""),
+    ("β-Turns & Loops",       1660.0, 1679.9, "β-Turns",    ""),
+    ("Anti-parallel β-Sheet", 1680.0, 1695.0, "β-Sheet",    "antiparallel"),
+]
+
 ASSIGNMENT_AMIDE2 = [
     ("α-Helix (II)",   1540.0, 1550.0, "α-Helix"),
     ("β-Sheet (II)",   1525.0, 1535.0, "β-Sheet"),
@@ -355,122 +431,141 @@ ASSIGNMENT_AMIDE3 = [
     ("β-Sheet (III)",        1220.0, 1255.0, "β-Sheet"),
     ("Unordered+Turn (III)", 1244.0, 1292.0, "Random Coil"),
 ]
-GROUP_ORDER_A1 = ["β-Sheet","α-Helix","Random Coil","β-Turns","Unassigned"]
+
+GROUP_ORDER_A1_GLOBULAR = ["β-Sheet","α-Helix","Random Coil","β-Turns","Unassigned"]
+GROUP_ORDER_A1_310      = ["β-Sheet","α-Helix","3₁₀-Helix","Random Coil","β-Turns","Unassigned"]
 GROUP_ORDER_A2 = ["α-Helix","β-Sheet","β-Turns","Unassigned II"]
 GROUP_ORDER_A3 = ["α-Helix","β-Sheet","Random Coil"]
 
+def get_a1_table(solvent, protein_type):
+    if solvent == "H2O":
+        return (ASSIGNMENT_H2O_310       if protein_type == "310helix"
+                else ASSIGNMENT_H2O_GLOBULAR)
+    else:
+        return (ASSIGNMENT_D2O_310       if protein_type == "310helix"
+                else ASSIGNMENT_D2O_GLOBULAR)
+
+def get_group_order(protein_type):
+    return GROUP_ORDER_A1_310 if protein_type == "310helix" else GROUP_ORDER_A1_GLOBULAR
+
 def assign(wn, table):
     for entry in table:
-        lo,hi,group = entry[1],entry[2],entry[3]
+        lo, hi, group = entry[1], entry[2], entry[3]
         if lo <= wn <= hi:
-            return entry[0], group, (entry[4] if len(entry)>4 else "")
-    return "Unassigned","Unassigned",""
+            return entry[0], group, (entry[4] if len(entry) > 4 else "")
+    return "Unassigned", "Unassigned", ""
 
 def _try_float(v):
-    try: return float(str(v).replace(",","."))
+    try: return float(str(v).replace(",", "."))
     except: return None
 
 def _find_hdrs(headers):
-    ai=ci=None
-    for i,h in enumerate(headers):
-        h=h.strip().lower()
-        if re.search(r"\ba0\b|area",h): ai=i
-        if re.search(r"\ba1\b|center|wavenumber|position",h): ci=i
-    return ai,ci
+    ai = ci = None
+    for i, h in enumerate(headers):
+        h = h.strip().lower()
+        if re.search(r"\ba0\b|area", h): ai = i
+        if re.search(r"\ba1\b|center|wavenumber|position", h): ci = i
+    return ai, ci
 
 def _parse_delim(lines, delim):
-    peaks,hrow,ai,ci=[],None,None,None
-    for no,line in enumerate(lines):
+    peaks, hrow, ai, ci = [], None, None, None
+    for no, line in enumerate(lines):
         if not line.strip() or line.strip().startswith("#"): continue
-        parts=[p.strip() for p in line.split(delim)]
-        if len(parts)<2: continue
+        parts = [p.strip() for p in line.split(delim)]
+        if len(parts) < 2: continue
         if hrow is None:
-            a,c=_find_hdrs([p.lower() for p in parts])
-            if a is not None and c is not None: hrow,ai,ci=no,a,c
+            a, c = _find_hdrs([p.lower() for p in parts])
+            if a is not None and c is not None: hrow, ai, ci = no, a, c
             continue
-        if len(parts)<=max(ai,ci): continue
-        ar=_try_float(parts[ai]); ce=_try_float(parts[ci])
-        if ar and ce and 1200<=ce<=1800 and ar>0:
-            peaks.append({"area":ar,"center":ce})
+        if len(parts) <= max(ai, ci): continue
+        ar = _try_float(parts[ai]); ce = _try_float(parts[ci])
+        if ar and ce and 1200 <= ce <= 1800 and ar > 0:
+            peaks.append({"area": ar, "center": ce})
     return peaks
 
 def _parse_ws(lines):
-    peaks,hrow,ai,ci=[],None,None,None
-    for no,line in enumerate(lines):
+    peaks, hrow, ai, ci = [], None, None, None
+    for no, line in enumerate(lines):
         if not line.strip() or line.strip().startswith("#"): continue
-        parts=line.split()
-        if len(parts)<2: continue
+        parts = line.split()
+        if len(parts) < 2: continue
         if hrow is None:
-            a,c=_find_hdrs([p.lower() for p in parts])
-            if a is not None and c is not None: hrow,ai,ci=no,a,c
+            a, c = _find_hdrs([p.lower() for p in parts])
+            if a is not None and c is not None: hrow, ai, ci = no, a, c
             continue
-        if len(parts)<=max(ai,ci): continue
-        ar=_try_float(parts[ai]); ce=_try_float(parts[ci])
-        if ar and ce and 1200<=ce<=1800 and ar>0:
-            peaks.append({"area":ar,"center":ce})
+        if len(parts) <= max(ai, ci): continue
+        ar = _try_float(parts[ai]); ce = _try_float(parts[ci])
+        if ar and ce and 1200 <= ce <= 1800 and ar > 0:
+            peaks.append({"area": ar, "center": ce})
     return peaks
 
 def _parse_fallback(lines):
-    peaks=[]
+    peaks = []
     for line in lines:
-        fs=[f for p in line.split() if (f:=_try_float(p)) is not None]
-        if len(fs)<2: continue
-        for f1,f2 in [(fs[0],fs[1]),(fs[1],fs[0])]:
-            if 1200<=f1<=1800 and 0<f2<1e7:
-                peaks.append({"area":f2,"center":f1}); break
+        fs = [f for p in line.split() if (f := _try_float(p)) is not None]
+        if len(fs) < 2: continue
+        for f1, f2 in [(fs[0], fs[1]), (fs[1], fs[0])]:
+            if 1200 <= f1 <= 1800 and 0 < f2 < 1e7:
+                peaks.append({"area": f2, "center": f1}); break
     return peaks
 
 def parse_all(content):
-    lines=[l.rstrip() for l in content.splitlines()]
-    for d in (",","\t",";"):
+    lines = [l.rstrip() for l in content.splitlines()]
+    for d in (",", "\t", ";"):
         try:
-            p=_parse_delim(lines,d)
+            p = _parse_delim(lines, d)
             if p: return p
         except: pass
     try:
-        p=_parse_ws(lines)
+        p = _parse_ws(lines)
         if p: return p
     except: pass
     return _parse_fallback(lines)
 
 def region(peaks, lo, hi):
-    return [p for p in peaks if lo<=p["center"]<=hi]
+    return [p for p in peaks if lo <= p["center"] <= hi]
 
-def calc(peaks, tbl):
-    if not peaks: return [],[],0.0,{}
-    tot=sum(p["area"] for p in peaks)
-    if tot==0: return [],[],0.0,{}
-    det,gt,bs=[],{},{}
-    for i,p in enumerate(peaks):
-        lbl,grp,sub=assign(p["center"],tbl)
-        pct=p["area"]/tot*100
-        det.append({"peak":i+1,"area":p["area"],"center":p["center"],"detail_label":lbl,"group":grp,"sub":sub,"pct":pct})
-        gt[grp]=gt.get(grp,0)+p["area"]
-        if grp=="β-Sheet" and sub:
-            bs[sub]=bs.get(sub,0)+p["area"]
-    gs={g:v/tot*100 for g,v in gt.items()}
-    bsp={k:v/tot*100 for k,v in bs.items()}
-    return det,gs,tot,bsp
+def calc(peaks, tbl, group_order):
+    if not peaks: return [], {}, 0.0, {}
+    tot = sum(p["area"] for p in peaks)
+    if tot == 0: return [], {}, 0.0, {}
+    det, gt, bs = [], {}, {}
+    for i, p in enumerate(peaks):
+        lbl, grp, sub = assign(p["center"], tbl)
+        pct = p["area"] / tot * 100
+        det.append({"peak": i+1, "area": p["area"], "center": p["center"],
+                    "detail_label": lbl, "group": grp, "sub": sub, "pct": pct})
+        gt[grp] = gt.get(grp, 0) + p["area"]
+        if grp == "β-Sheet" and sub:
+            bs[sub] = bs.get(sub, 0) + p["area"]
+    gs = {g: v/tot*100 for g, v in gt.items()}
+    bsp = {k: v/tot*100 for k, v in bs.items()}
+    return det, gs, tot, bsp
 
-def analyze_for_web(content, filename, solvent):
-    sn=Path(filename).stem
-    all_peaks=parse_all(content)
-    if not all_peaks: return json.dumps({"error":"No peaks parsed."})
-    a1t=ASSIGNMENT_H2O if solvent=="H2O" else ASSIGNMENT_D2O
-    a1p=region(all_peaks,1599,1700)
-    a2p=region(all_peaks,1510,1580)
-    a3p=region(all_peaks,1210,1360)
-    a1d,a1gs,a1tot,a1bs=calc(a1p,a1t) if a1p else ([],{},0,{})
-    a2d,a2gs,a2tot,_=calc(a2p,ASSIGNMENT_AMIDE2) if a2p else ([],{},0,{})
-    a3d,a3gs,a3tot,_=calc(a3p,ASSIGNMENT_AMIDE3) if a3p else ([],{},0,{})
-    alpha=a1gs.get("α-Helix",0); beta=a1gs.get("β-Sheet",0)
-    ratio=alpha/beta if beta>0 else None
+def analyze_for_web(content, filename, solvent, protein_type):
+    sn = Path(filename).stem
+    all_peaks = parse_all(content)
+    if not all_peaks: return json.dumps({"error": "No peaks parsed."})
+    a1_tbl = get_a1_table(solvent, protein_type)
+    go     = get_group_order(protein_type)
+    a1p = region(all_peaks, 1599, 1700)
+    a2p = region(all_peaks, 1510, 1580)
+    a3p = region(all_peaks, 1210, 1360)
+    a1d, a1gs, a1tot, a1bs = calc(a1p, a1_tbl, go)       if a1p else ([], {}, 0, {})
+    a2d, a2gs, a2tot, _    = calc(a2p, ASSIGNMENT_AMIDE2, GROUP_ORDER_A2) if a2p else ([], {}, 0, {})
+    a3d, a3gs, a3tot, _    = calc(a3p, ASSIGNMENT_AMIDE3, GROUP_ORDER_A3) if a3p else ([], {}, 0, {})
+    alpha = a1gs.get("α-Helix", 0); beta = a1gs.get("β-Sheet", 0)
+    ratio = alpha / beta if beta > 0 else None
     return json.dumps({
-        "sample_name":sn,"filename":filename,"solvent":solvent,
-        "amide1":{"details":a1d,"group_summary":a1gs,"total_area":a1tot,"beta_sub":a1bs,"group_order":GROUP_ORDER_A1},
-        "amide2":{"details":a2d,"group_summary":a2gs,"total_area":a2tot,"group_order":GROUP_ORDER_A2},
-        "amide3":{"details":a3d,"group_summary":a3gs,"total_area":a3tot,"group_order":GROUP_ORDER_A3},
-        "ratio":ratio,
+        "sample_name": sn, "filename": filename,
+        "solvent": solvent, "protein_type": protein_type,
+        "amide1": {"details": a1d, "group_summary": a1gs, "total_area": a1tot,
+                   "beta_sub": a1bs, "group_order": go},
+        "amide2": {"details": a2d, "group_summary": a2gs, "total_area": a2tot,
+                   "group_order": GROUP_ORDER_A2},
+        "amide3": {"details": a3d, "group_summary": a3gs, "total_area": a3tot,
+                   "group_order": GROUP_ORDER_A3},
+        "ratio": ratio,
     })
 </script>
 
@@ -478,55 +573,92 @@ def analyze_for_web(content, filename, solvent):
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script>
 'use strict';
-let pyodide=null, allResults=[], currentSolvent='H2O';
+let pyodide = null, allResults = [], currentSolvent = 'H2O', currentProteinType = 'globular';
 
 const GC = {
-  'β-Sheet':       {pie:'#0C3B2E',badge:'badge-beta'},
-  'α-Helix':       {pie:'#6D9773',badge:'badge-helix'},
-  'Random Coil':   {pie:'#BB8A52',badge:'badge-coil'},
-  'β-Turns':       {pie:'#FFBA00',badge:'badge-turn'},
-  'Unassigned':    {pie:'#8b1a1a',badge:'badge-unassigned'},
-  'Unassigned II': {pie:'#aaa',   badge:'badge-unassigned'},
+  'β-Sheet':       {pie:'#0C3B2E', badge:'badge-beta'},
+  'α-Helix':       {pie:'#6D9773', badge:'badge-helix'},
+  'Random Coil':   {pie:'#BB8A52', badge:'badge-coil'},
+  'β-Turns':       {pie:'#FFBA00', badge:'badge-turn'},
+  '3₁₀-Helix':     {pie:'#1a5080', badge:'badge-310helix'},
+  'Unassigned':    {pie:'#8b1a1a', badge:'badge-unassigned'},
+  'Unassigned II': {pie:'#aaa',    badge:'badge-unassigned'},
 };
-const MC = {'β-Sheet':'m-forest','α-Helix':'m-sage','Random Coil':'m-tan','β-Turns':'m-gold'};
+const MC = {
+  'β-Sheet':'m-forest','α-Helix':'m-sage','Random Coil':'m-tan',
+  'β-Turns':'m-gold','3₁₀-Helix':'m-blue'
+};
 
+// ── Reference tables — four variants ───────────────────────────────
 const REF = {
-  H2O:[
-    ['1600–1627.9', 'Aggregated β-Sheet',   'β-Sheet',    'badge-beta-agg',  '±2', '1624±1.0, 1627±2.0'],
-    ['1628–1642.9', 'β-Sheet (Main)',        'β-Sheet',    'badge-beta',      '±2', '1633±2.0, 1638±2.0, 1642±1.0'],
-    ['1643–1649.4', 'Random Coil',           'Random Coil','badge-coil',      '',   '1648±2.0'],
-    ['1649.5–1659.9','α-Helix',             'α-Helix',    'badge-helix',     '±3', '1656±2.0'],
-    ['1660–1689.9', 'β-Turns & Loops',       'β-Turns',    'badge-turn',      '',   '1667±1.0, 1675±1.0'],
-    ['1690.0–1700',   'Anti-parallel β-Sheet', 'β-Sheet',    'badge-beta-anti', '±2', '1680±2.0, 1685±2.0, 1691±2.0, 1696±2.0'],
+  H2O_globular:[
+    ['1600–1627.9',  'Aggregated β-Sheet',    'β-Sheet',    'badge-beta-agg',  '±2', '1624±1.0, 1627±2.0'],
+    ['1628–1642.9',  'β-Sheet (Main)',         'β-Sheet',    'badge-beta',      '±2', '1633±2.0, 1638±2.0, 1642±1.0'],
+    ['1643–1649.4',  'Random Coil',            'Random Coil','badge-coil',      '',   '1648±2.0'],
+    ['1649.5–1659.9','α-Helix',                'α-Helix',    'badge-helix',     '±3', '1656±2.0'],
+    ['1660–1689.9',  'β-Turns & Loops',        'β-Turns',    'badge-turn',      '',   '1667±1.0, 1675±1.0'],
+    ['1690.0–1700',  'Anti-parallel β-Sheet',  'β-Sheet',    'badge-beta-anti', '±2', '1680±2.0, 1685±2.0, 1691±2.0, 1696±2.0'],
   ],
-  D2O:[
-    ['1600–1625.9', 'Aggregated β-Sheet',   'β-Sheet',    'badge-beta-agg',  '±2', '1624±4.0'],
-    ['1630–1642.9', 'β-Sheet (Main)',        'β-Sheet',    'badge-beta',      '±2', '1631±3.0, 1637±3.0'],
-    ['1643–1649.4', 'Random Coil',           'Random Coil','badge-coil',      '',   '1645±4.0'],
-    ['1649.5–1659.9','α-Helix',             'α-Helix',    'badge-helix',     '±3', '1653±4.0'],
-    ['1660–1679.9', 'β-Turns & Loops',       'β-Turns',    'badge-turn',      '',   '1663±4.0, 1671±3.0'],
-    ['1680–1695',   'Anti-parallel β-Sheet', 'β-Sheet',    'badge-beta-anti', '±2', '1675±5.0, 1683±2.0, 1689±2.0, 1694±2.0'],
+  H2O_310:[
+    ['1600–1627.9',  'Aggregated β-Sheet',    'β-Sheet',    'badge-beta-agg',  '±2', '1624±1.0, 1627±2.0'],
+    ['1628–1642.9',  'β-Sheet (Main)',         'β-Sheet',    'badge-beta',      '±2', '1633±2.0, 1638±2.0, 1642±1.0'],
+    ['1643–1649.4',  'Random Coil',            'Random Coil','badge-coil',      '',   '1648±2.0'],
+    ['1649.5–1659.9','α-Helix',                'α-Helix',    'badge-helix',     '±3', '1656±2.0'],
+    ['1660–1666.0',  '3₁₀-Helix',             '3₁₀-Helix',  'badge-310helix',  '±2', '1660±1.0, 1666±1.0', true],
+    ['1666.1–1689.9','β-Turns & Loops',        'β-Turns',    'badge-turn',      '',   '1667±1.0, 1675±1.0'],
+    ['1690.0–1700',  'Anti-parallel β-Sheet',  'β-Sheet',    'badge-beta-anti', '±2', '1680±2.0, 1685±2.0, 1691±2.0, 1696±2.0'],
+  ],
+  D2O_globular:[
+    ['1600–1625.9',  'Aggregated β-Sheet',    'β-Sheet',    'badge-beta-agg',  '±2', '1624±4.0'],
+    ['1630–1642.9',  'β-Sheet (Main)',         'β-Sheet',    'badge-beta',      '±2', '1631±3.0, 1637±3.0'],
+    ['1643–1649.4',  'Random Coil',            'Random Coil','badge-coil',      '',   '1645±4.0'],
+    ['1649.5–1659.9','α-Helix',                'α-Helix',    'badge-helix',     '±3', '1653±4.0'],
+    ['1660–1679.9',  'β-Turns & Loops',        'β-Turns',    'badge-turn',      '',   '1663±4.0, 1671±3.0'],
+    ['1680–1695',    'Anti-parallel β-Sheet',  'β-Sheet',    'badge-beta-anti', '±2', '1675±5.0, 1683±2.0, 1689±2.0, 1694±2.0'],
+  ],
+  D2O_310:[
+    ['1600–1625.9',  'Aggregated β-Sheet',    'β-Sheet',    'badge-beta-agg',  '±2', '1624±4.0'],
+    ['1626–1638.9',  'β-Sheet (Main)',         'β-Sheet',    'badge-beta',      '±2', '1631±3.0, 1637±3.0'],
+    ['1639–1643.0',  '3₁₀-Helix',             '3₁₀-Helix',  'badge-310helix',  '±2', '1639±2.0, 1641±2.0', true],
+    ['1643.1–1649.4','Random Coil',            'Random Coil','badge-coil',      '',   '1645±4.0'],
+    ['1649.5–1659.9','α-Helix',                'α-Helix',    'badge-helix',     '±3', '1653±4.0'],
+    ['1660–1679.9',  'β-Turns & Loops',        'β-Turns',    'badge-turn',      '',   '1663±4.0, 1671±3.0'],
+    ['1680–1695',    'Anti-parallel β-Sheet',  'β-Sheet',    'badge-beta-anti', '±2', '1675±5.0, 1683±2.0, 1689±2.0, 1694±2.0'],
   ],
 };
+
 const SOLVENT_NOTES = {
   H2O:'H₂O: Amide I (1600–1700), Amide II (1510–1580), Amide III (1220–1340)',
   D2O:'D₂O: Amide I (1600–1700), Amide II (1510–1580), Amide III (1220–1340)',
 };
+const PROTEIN_NOTES = {
+  globular: '<strong>Globular</strong> — β-turns assigned at 1660–1666 cm⁻¹ (default for albumin, IgG, enzymes)',
+  '310helix': '<strong>3₁₀-Helix rich</strong> — H₂O: 1660–1666 cm⁻¹ → 3₁₀-Helix &nbsp;|&nbsp; D₂O: 1639–1643 cm⁻¹ → 3₁₀-Helix (isotopic shift)',
+};
 
-function renderRefTable(solvent) {
-  const rows = REF[solvent||'H2O'];
+function refKey() {
+  return `${currentSolvent}_${currentProteinType}`;
+}
+
+function renderRefTable(solventOverride) {
+  const s = solventOverride || currentSolvent;
+  const key = `${s}_${currentProteinType}`;
+  const rows = REF[key] || REF[`${s}_globular`];
   document.getElementById('ref-table-container').innerHTML = `
     <table class="ref-table">
       <thead><tr>
         <th>Range (cm⁻¹)</th><th>Assignment</th><th>Group</th><th>± (cm⁻¹)</th>
       </tr></thead>
-      <tbody>${rows.map(r=>`<tr>
+      <tbody>${rows.map(r=>`<tr class="${r[6]?'row-310':''}">
         <td><strong>${esc(r[0])}</strong></td>
         <td><span class="badge ${r[3]}">${esc(r[1])}</span></td>
         <td>${esc(r[2])}</td>
         <td style="font-family:var(--mono);font-size:10px;color:var(--muted)">${esc(r[5])}</td>
       </tr>`).join('')}</tbody>
-    </table>`;
+    </table>
+    ${currentProteinType==='310helix' ? `<p style="font-size:9px;font-family:var(--mono);color:var(--blue);margin-top:6px;padding:4px 8px;background:var(--blue-light);border-radius:4px">
+      <strong>Highlighted row</strong> — 3₁₀-Helix sub-range active for this protein type
+    </p>` : ''}`;
 }
 
 function setSolvent(s) {
@@ -538,6 +670,15 @@ function setSolvent(s) {
   renderRefTable(s);
 }
 
+function setProteinType(pt) {
+  currentProteinType = pt;
+  document.getElementById('btn-globular').classList.toggle('active', pt==='globular');
+  document.getElementById('btn-310').classList.toggle('active', pt==='310helix');
+  document.getElementById('protein-note').innerHTML = PROTEIN_NOTES[pt];
+  renderRefTable();
+}
+
+// initialise table
 renderRefTable('H2O');
 
 /* ── Pyodide ── */
@@ -568,10 +709,11 @@ async function handleFiles(fileList) {
     document.getElementById('proc-msg').textContent=`Processing ${file.name}…`;
     try {
       const text = await file.text();
-      pyodide.globals.set('_wc',text);
-      pyodide.globals.set('_wf',file.name);
-      pyodide.globals.set('_ws',currentSolvent);
-      const r = JSON.parse(pyodide.runPython('analyze_for_web(_wc,_wf,_ws)'));
+      pyodide.globals.set('_wc', text);
+      pyodide.globals.set('_wf', file.name);
+      pyodide.globals.set('_ws', currentSolvent);
+      pyodide.globals.set('_wp', currentProteinType);
+      const r = JSON.parse(pyodide.runPython('analyze_for_web(_wc,_wf,_ws,_wp)'));
       if (r.error) { showAlert('error',`${file.name}: ${r.error}`); }
       else {
         allResults.push(r);
@@ -585,32 +727,31 @@ async function handleFiles(fileList) {
   loader.className='loader-wrap';
 }
 
-function showAlert(type,msg) {
+function showAlert(type, msg) {
   const el=document.getElementById('proc-alert');
   el.className=`alert visible ${type}`;
   document.getElementById('proc-alert-msg').textContent=msg;
 }
+
 function addChip(r) {
   const tot = r.amide1.details.length+r.amide2.details.length+r.amide3.details.length;
+  const ptLabel = r.protein_type==='310helix' ? '3₁₀' : 'Glob';
   const c=document.createElement('div');
   c.className='file-chip';
-  c.innerHTML=`<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>${esc(r.sample_name)} [${r.solvent}] (${tot} peaks)`;
+  c.innerHTML=`<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>${esc(r.sample_name)} [${r.solvent}·${ptLabel}] (${tot} peaks)`;
   document.getElementById('file-chips').appendChild(c);
 }
 
 /* ── PNG Export ── */
 function showToast(msg) {
   const t = document.getElementById('png-toast');
-  t.textContent = msg;
-  t.classList.add('show');
+  t.textContent = msg; t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'), 2500);
 }
 
 async function exportPNG(elementId, filename) {
   const el = document.getElementById(elementId);
   if (!el) { showToast('⚠ Element not found'); return; }
-  
-  // Temporarily show the element if hidden (in inactive amide panel)
   const panel = el.closest('.amide-panel');
   let wasHidden = false;
   if (panel && !panel.classList.contains('active')) {
@@ -619,43 +760,26 @@ async function exportPNG(elementId, filename) {
     panel.style.position = 'absolute';
     panel.style.left = '-9999px';
   }
-
   try {
     showToast('⏳ Capturing…');
     const canvas = await html2canvas(el, {
-      backgroundColor: '#ffffff',
-      scale: 2,
-      useCORS: true,
-      logging: false,
-      onclone: (cloned) => {
-        // Redraw canvases in clone since html2canvas can't capture them
+      backgroundColor:'#ffffff', scale:2, useCORS:true, logging:false,
+      onclone:(cloned)=>{
         const origCanvases = el.querySelectorAll('canvas');
         const clonedCanvases = cloned.querySelectorAll('canvas');
-        origCanvases.forEach((orig, i) => {
+        origCanvases.forEach((orig,i)=>{
           if (clonedCanvases[i]) {
-            clonedCanvases[i].width = orig.width;
-            clonedCanvases[i].height = orig.height;
-            const ctx = clonedCanvases[i].getContext('2d');
-            ctx.drawImage(orig, 0, 0);
+            clonedCanvases[i].width=orig.width; clonedCanvases[i].height=orig.height;
+            clonedCanvases[i].getContext('2d').drawImage(orig,0,0);
           }
         });
       }
     });
     const link = document.createElement('a');
-    link.download = filename;
-    link.href = canvas.toDataURL('image/png');
-    link.click();
+    link.download = filename; link.href = canvas.toDataURL('image/png'); link.click();
     showToast('✓ PNG saved!');
-  } catch(err) {
-    showToast('⚠ Export failed');
-    console.error(err);
-  }
-
-  if (wasHidden) {
-    panel.style.display = '';
-    panel.style.position = '';
-    panel.style.left = '';
-  }
+  } catch(err) { showToast('⚠ Export failed'); console.error(err); }
+  if (wasHidden) { panel.style.display=''; panel.style.position=''; panel.style.left=''; }
 }
 
 /* ── Pie drawing ── */
@@ -682,19 +806,18 @@ function drawPie(canvasId, gs, order) {
 /* ── Build one amide panel HTML ── */
 function buildAmidePanel(amideData, pidSuffix, showBeta, ratio) {
   const {details, group_summary:gs, total_area:tot, group_order:go, beta_sub:bs={}} = amideData;
-  if (!details || details.length===0) {
+  if (!details || details.length===0)
     return `<div class="no-data">No peaks detected in this region.</div>`;
-  }
 
   const cid = `pie${pidSuffix}`;
-  const mgroups = go.filter(g=>g!=='Unassigned'&&g!=='Unassigned II');
+  const mgroups = (go||[]).filter(g=>!['Unassigned','Unassigned II'].includes(g));
   const metricsHtml = mgroups.filter(g=>g in gs).map(g=>`
     <div class="metric ${MC[g]||''}">
       <div class="metric-val">${(gs[g]||0).toFixed(1)}%</div>
       <div class="metric-lbl">${esc(g)}</div>
     </div>`).join('');
 
-  const legendHtml = go.filter(g=>g in gs&&gs[g]>0).map(g=>`
+  const legendHtml = (go||[]).filter(g=>g in gs&&gs[g]>0).map(g=>`
     <div class="pie-legend-row">
       <div class="pie-swatch" style="background:${(GC[g]||{pie:'#aaa'}).pie}"></div>
       <span class="pie-legend-name">${esc(g)}</span>
@@ -705,39 +828,27 @@ function buildAmidePanel(amideData, pidSuffix, showBeta, ratio) {
     <div class="beta-breakdown">
       <div class="beta-breakdown-title">β-Sheet Breakdown — Total ${(gs['β-Sheet']||0).toFixed(2)}%</div>
       <div class="beta-breakdown-rows">
-        <div class="beta-sub">
-          <div class="beta-sub-val">${(bs.aggregated||0).toFixed(1)}%</div>
-          <div class="beta-sub-lbl">Aggregated<br/>(1600–1627 cm⁻¹)</div>
-        </div>
-        <div class="beta-sub">
-          <div class="beta-sub-val">${(bs.main||0).toFixed(1)}%</div>
-          <div class="beta-sub-lbl">Parallel (Main)<br/>(1628–1642 cm⁻¹)</div>
-        </div>
-        <div class="beta-sub">
-          <div class="beta-sub-val">${(bs.antiparallel||0).toFixed(1)}%</div>
-          <div class="beta-sub-lbl">Anti-parallel<br/>(1680–1695 cm⁻¹)</div>
-        </div>
+        <div class="beta-sub"><div class="beta-sub-val">${(bs.aggregated||0).toFixed(1)}%</div><div class="beta-sub-lbl">Aggregated<br/>(1600–1627 cm⁻¹)</div></div>
+        <div class="beta-sub"><div class="beta-sub-val">${(bs.main||0).toFixed(1)}%</div><div class="beta-sub-lbl">Parallel (Main)<br/>(1628–1642 cm⁻¹)</div></div>
+        <div class="beta-sub"><div class="beta-sub-val">${(bs.antiparallel||0).toFixed(1)}%</div><div class="beta-sub-lbl">Anti-parallel<br/>(1680–1695 cm⁻¹)</div></div>
       </div>
     </div>` : '';
 
-  const ratioHtml = (ratio!=null && showBeta) ? `<div class="ratio-chip">α/β ratio: <strong>${ratio.toFixed(3)}</strong>&nbsp;&nbsp;α ${(gs['α-Helix']||0).toFixed(2)}% / β ${(gs['β-Sheet']||0).toFixed(2)}%</div>` : '';
+  const ratioHtml = (ratio!=null && showBeta) ? `
+    <div class="ratio-chip">α/β ratio: <strong>${ratio.toFixed(3)}</strong>&nbsp;&nbsp;α ${(gs['α-Helix']||0).toFixed(2)}% / β ${(gs['β-Sheet']||0).toFixed(2)}%</div>` : '';
 
-  const sumRows = go.filter(g=>g in gs).map(g=>`<tr>
+  const sumRows = (go||[]).filter(g=>g in gs).map(g=>`<tr>
     <td><span class="badge ${(GC[g]||{badge:'badge-unassigned'}).badge}">${esc(g)}</span></td>
     <td>${gs[g].toFixed(2)}%</td>
   </tr>`).join('');
 
   const pkRows = details.map(d=>`<tr>
-    <td>${d.peak}</td>
-    <td>${d.center.toFixed(2)}</td>
-    <td>${d.area.toFixed(5)}</td>
+    <td>${d.peak}</td><td>${d.center.toFixed(2)}</td><td>${d.area.toFixed(5)}</td>
     <td><span class="badge ${(GC[d.group]||{badge:'badge-unassigned'}).badge}">${esc(d.detail_label)}</span></td>
-    <td>${esc(d.group)}</td>
-    <td>${d.pct.toFixed(2)}%</td>
+    <td>${esc(d.group)}</td><td>${d.pct.toFixed(2)}%</td>
   </tr>`).join('');
 
-  const gsid = `gs${pidSuffix}`, pdid = `pd${pidSuffix}`;
-
+  const gsid=`gs${pidSuffix}`, pdid=`pd${pidSuffix}`;
   return `
     <div class="metrics-row">${metricsHtml}</div>
     <div class="vis-row">
@@ -766,8 +877,7 @@ function buildAmidePanel(amideData, pidSuffix, showBeta, ratio) {
     </div>`;
 }
 
-/* ── PNG export icon SVG ── */
-const pngIcon = `<svg viewBox="0 0 24 24" style="width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>`;
+const pngIcon=`<svg viewBox="0 0 24 24" style="width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>`;
 
 /* ── Render full result card ── */
 let cardIndex = 0;
@@ -780,83 +890,61 @@ function renderResult(r) {
   cardIndex++;
   const sid = `c${cardIndex}`;
   const card = document.createElement('div');
-  card.className='result-card';
-  card.id=`result-${sid}`;
-  card.__result = r;
+  card.className='result-card'; card.id=`result-${sid}`; card.__result=r;
 
   const a1id=`a1-${sid}`, a2id=`a2-${sid}`, a3id=`a3-${sid}`;
-  const a2empty = (!r.amide2.details||r.amide2.details.length===0);
-  const a3empty = (!r.amide3.details||r.amide3.details.length===0);
-  const a2pip = a2empty ? ' style="opacity:.4"' : '';
-  const a3pip = a3empty ? ' style="opacity:.4"' : '';
-
-  // PNG capture wrapper IDs per amide region
+  const a2empty=(!r.amide2.details||r.amide2.details.length===0);
+  const a3empty=(!r.amide3.details||r.amide3.details.length===0);
   const cap1=`cap-a1-${sid}`, cap2=`cap-a2-${sid}`, cap3=`cap-a3-${sid}`;
+  const ptLabel = r.protein_type==='310helix' ? '3₁₀-Helix rich' : 'Globular';
 
-  card.innerHTML = `
+  card.innerHTML=`
     <div class="result-card-title">
       ${esc(r.sample_name)}
       <span class="result-card-file">${esc(r.filename)}</span>
       <span class="result-card-solvent">${esc(r.solvent)}</span>
+      <span class="result-card-protein">${esc(ptLabel)}</span>
     </div>
-
     <div class="amide-tabs">
       <button class="amide-tab active" onclick="switchAmide(this,'${a1id}')">
         <span class="amide-tab-pip i"></span>Amide I <span class="amide-range">1600–1700 cm⁻¹</span>
       </button>
-      <button class="amide-tab" onclick="switchAmide(this,'${a2id}')"${a2pip}>
+      <button class="amide-tab" onclick="switchAmide(this,'${a2id}')"${a2empty?' style="opacity:.4"':''}>
         <span class="amide-tab-pip ii"></span>Amide II <span class="amide-range">1480–1575 cm⁻¹</span>
-        ${a2empty ? '<span style="font-size:8px;font-family:var(--mono);color:var(--muted)">(none)</span>' : ''}
+        ${a2empty?'<span style="font-size:8px;font-family:var(--mono);color:var(--muted)">(none)</span>':''}
       </button>
-      <button class="amide-tab" onclick="switchAmide(this,'${a3id}')"${a3pip}>
+      <button class="amide-tab" onclick="switchAmide(this,'${a3id}')"${a3empty?' style="opacity:.4"':''}>
         <span class="amide-tab-pip iii"></span>Amide III <span class="amide-range">1220–1340 cm⁻¹</span>
-        ${a3empty ? '<span style="font-size:8px;font-family:var(--mono);color:var(--muted)">(none)</span>' : ''}
+        ${a3empty?'<span style="font-size:8px;font-family:var(--mono);color:var(--muted)">(none)</span>':''}
       </button>
     </div>
-
     <div id="${a1id}" class="amide-panel active">
       <div id="${cap1}" class="png-capture-wrap" style="padding:12px 4px 4px">
-        ${buildAmidePanel(r.amide1, `_a1_${sid}`, true, r.ratio)}
+        ${buildAmidePanel(r.amide1,`_a1_${sid}`,true,r.ratio)}
       </div>
-      <div class="dl-row" style="margin-top:.75rem">
+      <div class="dl-row">
         <button class="btn" onclick="downloadTXT('${sid}')">
-          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          TXT
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>TXT
         </button>
         <button class="btn png" onclick="exportPNG('${cap1}','${r.sample_name}_amide-I.png')">
           ${pngIcon} PNG · Amide I
         </button>
       </div>
     </div>
-
     <div id="${a2id}" class="amide-panel">
       <div id="${cap2}" class="png-capture-wrap" style="padding:12px 4px 4px">
-        ${a2empty
-          ? `<div class="no-data">No Amide II peaks detected (1480–1575 cm⁻¹) in this file.</div>`
-          : buildAmidePanel(r.amide2, `_a2_${sid}`, false, null)}
+        ${a2empty?`<div class="no-data">No Amide II peaks detected (1480–1575 cm⁻¹).</div>`:buildAmidePanel(r.amide2,`_a2_${sid}`,false,null)}
       </div>
-      ${!a2empty ? `<div class="dl-row" style="margin-top:.75rem">
-        <button class="btn png" onclick="exportPNG('${cap2}','${r.sample_name}_amide-II.png')">
-          ${pngIcon} PNG · Amide II
-        </button>
-      </div>` : ''}
+      ${!a2empty?`<div class="dl-row"><button class="btn png" onclick="exportPNG('${cap2}','${r.sample_name}_amide-II.png')">${pngIcon} PNG · Amide II</button></div>`:''}
     </div>
-
     <div id="${a3id}" class="amide-panel">
       <div id="${cap3}" class="png-capture-wrap" style="padding:12px 4px 4px">
-        ${a3empty
-          ? '<div class="no-data">No Amide III peaks detected (1220–1340 cm⁻¹) in this file.</div>'
-          : buildAmidePanel(r.amide3, `_a3_${sid}`, false, null)}
+        ${a3empty?'<div class="no-data">No Amide III peaks detected (1220–1340 cm⁻¹).</div>':buildAmidePanel(r.amide3,`_a3_${sid}`,false,null)}
       </div>
-      ${!a3empty ? `<div class="dl-row" style="margin-top:.75rem">
-        <button class="btn png" onclick="exportPNG('${cap3}','${r.sample_name}_amide-III.png')">
-          ${pngIcon} PNG · Amide III
-        </button>
-      </div>` : ''}
+      ${!a3empty?`<div class="dl-row"><button class="btn png" onclick="exportPNG('${cap3}','${r.sample_name}_amide-III.png')">${pngIcon} PNG · Amide III</button></div>`:''}
     </div>`;
 
   area.appendChild(card);
-
   requestAnimationFrame(()=>{
     drawPie(`pie_a1_${sid}`, r.amide1.group_summary, r.amide1.group_order||[]);
     if (!a2empty) drawPie(`pie_a2_${sid}`, r.amide2.group_summary, r.amide2.group_order||[]);
@@ -875,15 +963,15 @@ function switchAmide(btn, id) {
   if (cv) {
     const pid = cv.id;
     const r = btn.closest('.result-card').__result;
-    const which = pid.includes('_a2_') ? 'amide2' : pid.includes('_a3_') ? 'amide3' : 'amide1';
+    const which = pid.includes('_a2_')?'amide2':pid.includes('_a3_')?'amide3':'amide1';
     drawPie(pid, r[which].group_summary, r[which].group_order||[]);
   }
 }
 
 function switchSub(btn, id) {
-  const amidePanel = btn.closest('.amide-panel');
-  amidePanel.querySelectorAll('.sub-tab').forEach(t=>t.classList.remove('active'));
-  amidePanel.querySelectorAll('.sub-panel').forEach(p=>p.classList.remove('active'));
+  const ap = btn.closest('.amide-panel');
+  ap.querySelectorAll('.sub-tab').forEach(t=>t.classList.remove('active'));
+  ap.querySelectorAll('.sub-panel').forEach(p=>p.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById(id).classList.add('active');
 }
@@ -896,12 +984,14 @@ function updateComparison() {
   const lbl=document.createElement('div'); lbl.className='section-label'; lbl.textContent='Multi-sample comparison (Amide I)';
   area.appendChild(lbl);
   const card=document.createElement('div'); card.className='result-card'; card.id='comparison-card';
-  const groups=['β-Sheet','α-Helix','Random Coil','β-Turns'];
+  const groups=['β-Sheet','α-Helix','3₁₀-Helix','Random Coil','β-Turns'];
   const rows=allResults.map(r=>{
     const gs=r.amide1.group_summary, bs=r.amide1.beta_sub||{};
+    const ptLabel=r.protein_type==='310helix'?'3₁₀':'Glob';
     return `<tr>
       <td style="font-weight:700">${esc(r.sample_name)}</td>
       <td><span style="font-size:9px;font-family:var(--mono);background:var(--forest);color:#fff;padding:1px 5px;border-radius:3px">${r.solvent}</span></td>
+      <td><span style="font-size:9px;font-family:var(--mono);background:var(--blue);color:#fff;padding:1px 5px;border-radius:3px">${ptLabel}</span></td>
       ${groups.map(g=>`<td>${(gs[g]||0).toFixed(2)}%</td>`).join('')}
       <td>${(bs.aggregated||0).toFixed(2)}%</td>
       <td>${(bs.main||0).toFixed(2)}%</td>
@@ -909,40 +999,52 @@ function updateComparison() {
       <td>${r.ratio!=null?r.ratio.toFixed(3):'N/A'}</td>
     </tr>`;
   }).join('');
-
   card.innerHTML=`
     <div class="result-card-title">Comparison — ${allResults.length} samples</div>
     <div id="comparison-table-capture" class="png-capture-wrap" style="padding:8px 4px 4px">
       <div class="table-wrap"><table>
-        <thead><tr><th>Sample</th><th>Solvent</th>${groups.map(g=>`<th>${esc(g)}</th>`).join('')}<th>Agg.β%</th><th>Para.β%</th><th>Anti.β%</th><th>α/β</th></tr></thead>
+        <thead><tr>
+          <th>Sample</th><th>Solvent</th><th>Type</th>
+          ${groups.map(g=>`<th>${esc(g)}</th>`).join('')}
+          <th>Agg.β%</th><th>Para.β%</th><th>Anti.β%</th><th>α/β</th>
+        </tr></thead>
         <tbody>${rows}</tbody>
       </table></div>
     </div>
     <div class="dl-row">
       <button class="btn primary" onclick="downloadComparisonTXT()">
-        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        TXT
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>TXT
       </button>
       <button class="btn png" onclick="exportPNG('comparison-table-capture','comparison_table.png')">
-        ${pngIcon} PNG · Comparison table
+        ${pngIcon} PNG · Comparison
       </button>
     </div>`;
   area.appendChild(card);
 }
 
-/* ── Text Downloads ── */
+/* ── Text downloads ── */
 function downloadTXT(sid) {
   const card=document.getElementById(`result-${sid}`);
   const r=card.__result;
   const a1=r.amide1,a2=r.amide2,a3=r.amide3,bs=a1.beta_sub||{};
+  const ptLabel=r.protein_type==='310helix'?'3₁₀-Helix rich':'Globular';
   const S='='.repeat(65);
-  let L=[S,'  PROTEIN SECONDARY STRUCTURE CALCULATOR',`  Sample:  ${r.sample_name}`,`  File:    ${r.filename}`,`  Solvent: ${r.solvent}`,S,'',
-    '  ── AMIDE I (1600–1700 cm⁻¹) ──',`  Total area: ${a1.total_area.toFixed(5)}`,'','  Peak Detail:',
-    `  ${'#'.padEnd(4)}  ${'Center'.padEnd(12)}  ${'Area'.padEnd(12)}  ${'Assignment'.padEnd(28)}  ${'Group'.padEnd(16)}  ${'%'.padStart(6)}`,'  '+'-'.repeat(82)];
+  let L=[S,'  PROTEIN SECONDARY STRUCTURE CALCULATOR',
+    `  Sample:       ${r.sample_name}`,
+    `  File:         ${r.filename}`,
+    `  Solvent:      ${r.solvent}`,
+    `  Protein type: ${ptLabel}`,S,'',
+    '  ── AMIDE I (1600–1700 cm⁻¹) ──',`  Total area: ${a1.total_area.toFixed(5)}`,'',
+    '  Peak Detail:',
+    `  ${'#'.padEnd(4)}  ${'Center'.padEnd(12)}  ${'Area'.padEnd(12)}  ${'Assignment'.padEnd(28)}  ${'Group'.padEnd(16)}  ${'%'.padStart(6)}`,
+    '  '+'-'.repeat(84)];
   a1.details.forEach(d=>L.push(`  ${String(d.peak).padEnd(4)}  ${d.center.toFixed(2).padEnd(12)}  ${d.area.toFixed(5).padEnd(12)}  ${d.detail_label.padEnd(28)}  ${d.group.padEnd(16)}  ${d.pct.toFixed(2).padStart(6)}%`));
   L.push('','  Group Summary:');
   (a1.group_order||[]).filter(g=>g in a1.group_summary).forEach(g=>L.push(`  ${g.padEnd(30)}  ${a1.group_summary[g].toFixed(2).padStart(6)}%`));
-  L.push('','  β-Sheet Breakdown:',`  Aggregated         : ${(bs.aggregated||0).toFixed(2)}%`,`  Parallel (Main)    : ${(bs.main||0).toFixed(2)}%`,`  Anti-parallel      : ${(bs.antiparallel||0).toFixed(2)}%`);
+  L.push('','  β-Sheet Breakdown:',
+    `  Aggregated         : ${(bs.aggregated||0).toFixed(2)}%`,
+    `  Parallel (Main)    : ${(bs.main||0).toFixed(2)}%`,
+    `  Anti-parallel      : ${(bs.antiparallel||0).toFixed(2)}%`);
   if(r.ratio!=null) L.push(`\n  α/β Ratio: ${r.ratio.toFixed(3)}`);
   if(a2.details&&a2.details.length){
     L.push('',S,'  ── AMIDE II (1480–1575 cm⁻¹) ──',`  Total area: ${a2.total_area.toFixed(5)}`,'');
@@ -957,22 +1059,108 @@ function downloadTXT(sid) {
 }
 
 function downloadComparisonTXT() {
-  const groups=['β-Sheet','α-Helix','Random Coil','β-Turns'];
-  const S='='.repeat(95); let L=[S,'  MULTI-SAMPLE COMPARISON (Amide I)',S,''];
-  L.push(`  ${'Sample'.padEnd(25)}  ${'Sol'.padEnd(5)}  ${groups.map(g=>g.padEnd(12)).join('  ')}  ${'Agg.β'.padEnd(8)}  ${'Para.β'.padEnd(8)}  ${'Anti.β'.padEnd(8)}  ${'α/β'.padStart(6)}`,'  '+'-'.repeat(95));
+  const groups=['β-Sheet','α-Helix','3₁₀-Helix','Random Coil','β-Turns'];
+  const S='='.repeat(110); let L=[S,'  MULTI-SAMPLE COMPARISON (Amide I)',S,''];
+  L.push(`  ${'Sample'.padEnd(25)}  ${'Sol'.padEnd(5)}  ${'Type'.padEnd(12)}  ${groups.map(g=>g.padEnd(12)).join('  ')}  ${'Agg.β'.padEnd(8)}  ${'Para.β'.padEnd(8)}  ${'Anti.β'.padEnd(8)}  ${'α/β'.padStart(6)}`,'  '+'-'.repeat(110));
   allResults.forEach(r=>{
     const gs=r.amide1.group_summary,bs=r.amide1.beta_sub||{};
-    L.push(`  ${r.sample_name.padEnd(25)}  ${r.solvent.padEnd(5)}  ${groups.map(g=>(gs[g]||0).toFixed(2).padEnd(12)).join('  ')}  ${(bs.aggregated||0).toFixed(2).padEnd(8)}  ${(bs.main||0).toFixed(2).padEnd(8)}  ${(bs.antiparallel||0).toFixed(2).padEnd(8)}  ${r.ratio!=null?r.ratio.toFixed(3).padStart(6):'   N/A'}`);
+    const ptLabel=r.protein_type==='310helix'?'3₁₀-Helix rich':'Globular';
+    L.push(`  ${r.sample_name.padEnd(25)}  ${r.solvent.padEnd(5)}  ${ptLabel.padEnd(12)}  ${groups.map(g=>(gs[g]||0).toFixed(2).padEnd(12)).join('  ')}  ${(bs.aggregated||0).toFixed(2).padEnd(8)}  ${(bs.main||0).toFixed(2).padEnd(8)}  ${(bs.antiparallel||0).toFixed(2).padEnd(8)}  ${r.ratio!=null?r.ratio.toFixed(3).padStart(6):'   N/A'}`);
   });
   L.push('',S);
   triggerDL(L.join('\n'),'comparison_secondary_structure.txt','text/plain');
 }
 
 function triggerDL(content, filename, mime) {
-  const a=Object.assign(document.createElement('a'),{href:URL.createObjectURL(new Blob([content],{type:mime+';charset=utf-8;'})),download:filename});
+  const a=Object.assign(document.createElement('a'),{
+    href:URL.createObjectURL(new Blob([content],{type:mime+';charset=utf-8;'})),
+    download:filename
+  });
   a.click(); URL.revokeObjectURL(a.href);
 }
 
+/* ── Documentation PDF download ── */
+function downloadDocumentation() {
+  // Reconstruct the PDF from the known documentation content
+  // Redirects to the documentation PDF embedded or triggers alert
+  const url = 'Documentation.pdf';
+  // Try fetch first, fall back to informative message
+  fetch(url).then(r=>{
+    if(r.ok) {
+      r.blob().then(blob=>{
+        const a=document.createElement('a');
+        a.href=URL.createObjectURL(blob);
+        a.download='SecStruct_Calculator_Documentation.pdf';
+        a.click();
+      });
+    } else { openDocFallback(); }
+  }).catch(()=>openDocFallback());
+}
+
+function openDocFallback() {
+  // Generate a simple text documentation as fallback
+  const doc = `SECSTRUCT CALCULATOR — DOCUMENTATION
+=====================================
+
+1. OVERVIEW
+The SecStruct Calculator is a web-based tool for protein secondary
+structure determination using FTIR microspectroscopy, focusing on
+the Amide I, II, and III regions.
+
+Quantified secondary structure elements:
+  • α-Helices     • β-Sheets     • β-Turns     • Random Coils
+
+2. INPUT FILE PREPARATION
+Step 1: Locate the fitted parameters table in PeakFit output.
+        Columns required: Peak | Type | a0 (area) | a1 (center)
+
+Step 2: Copy the table and paste into Google Sheets.
+
+Step 3: Delete the a2 column (peak width — not required).
+
+Step 4: Download as CSV (File → Download → Comma Separated Values).
+
+Step 5: Upload to SecStruct Calculator.
+
+3. CALCULATION
+  Total area     = Σ(area of all fitted peaks)
+  % structure    = (area assigned to structure / total area) × 100
+
+4. KEY OUTPUTS
+  • Percentage contributions per secondary structure group
+  • α/β ratio (helical vs sheet content)
+  • Total Amide area (denominator for all calculations)
+  • Individual peak assignments with center, area, group, and %
+
+5. PROTEIN TYPE SETTING
+  GLOBULAR (default)
+    H₂O: 1660–1689.9 cm⁻¹ → β-Turns & Loops
+    D₂O: 1660–1679.9 cm⁻¹ → β-Turns & Loops
+    Recommended for: albumin, IgG, enzymes, most soluble proteins.
+
+  3₁₀-HELIX RICH
+    H₂O: 1660–1666.0 cm⁻¹ → 3₁₀-Helix (carved from β-Turns range)
+    D₂O: 1639–1643.0 cm⁻¹ → 3₁₀-Helix (isotopic shift)
+    Recommended for: α-lactalbumin, lysozyme, proteins with confirmed
+    3₁₀-helix content by X-ray or CD spectroscopy.
+
+  Note: Without D₂O data or independent structural evidence, the
+  Globular (β-turns) assignment is recommended as the safe default.
+
+6. THE 1660–1666 cm⁻¹ DUAL-ASSIGNMENT
+  The 3₁₀-helix and β-turn type III are structurally related —
+  type III β-turns correspond to exactly one turn of the 3₁₀-helix.
+  This creates genuine spectral ambiguity at 1660–1666 cm⁻¹.
+  The D₂O isotopic shift to 1639–1643 cm⁻¹ is the best experimental
+  confirmation of 3₁₀-helix content.
+
+Developed by Sana A. E. Abzakh
+sanaabzakh262@gmail.com
+`;
+  triggerDL(doc,'SecStruct_Calculator_Documentation.txt','text/plain');
+}
+
+/* ── Example CSV ── */
 const EXAMPLE_CSV=`Peak  Type,a0,a1
 1  Gauss Area,1.59058735,1487.10655
 2  Gauss Area,1.92563363,1510.16619
@@ -990,7 +1178,10 @@ const EXAMPLE_CSV=`Peak  Type,a0,a1
 14  Gauss Area,1.25212566,1710.00948`;
 
 function downloadExampleCSV(){
-  const a=Object.assign(document.createElement('a'),{href:URL.createObjectURL(new Blob([EXAMPLE_CSV],{type:'text/csv'})),download:'example_peakfit_output.csv'});
+  const a=Object.assign(document.createElement('a'),{
+    href:URL.createObjectURL(new Blob([EXAMPLE_CSV],{type:'text/csv'})),
+    download:'example_peakfit_output.csv'
+  });
   a.click(); URL.revokeObjectURL(a.href);
 }
 
